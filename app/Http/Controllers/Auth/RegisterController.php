@@ -97,5 +97,4 @@ class RegisterController extends Controller
             'img_name' => $fileNameToStore,
         ]);
     }
-
 }

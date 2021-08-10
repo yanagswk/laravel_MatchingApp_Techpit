@@ -6,9 +6,9 @@
   <div class='container'>
     <header class="header">
       <p class='header_logo'>
-        <a href="{{ route('home') }}">
-            <img src="/storage/images/techpit-match-icon.png">
-        </a>
+      <a href="{{ route('home') }}">
+      <img src="/storage/images/techpit-match-icon.png">
+      </a>
       </p>
     </header>
     <div class='userInfo'>
@@ -21,15 +21,19 @@
     
       <div class='userAction'>
         <div class="userAction_edit userAction_common">
-          <i class="fas fa-edit fa-2x"></i>
+          
+          <!-- この行を編集 -->
+          <a href="/users/edit/{{$user->id}}"><i class="fas fa-edit fa-2x"></i></a>
+          
           <span>情報を編集</span>
+          
         </div>
         <div class='userAction_logout userAction_common'>
         <a href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fas fa-cog fa-2x"></i></a>
           <span>ログアウト</span>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
+              {{ csrf_field() }}
           </form>
         </div>
       </div>

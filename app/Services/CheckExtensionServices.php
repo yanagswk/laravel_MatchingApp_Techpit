@@ -3,7 +3,7 @@
 namespace App\Services;
 
 /**
- * 拡張子判定クラス
+ * 拡張子判定して、エンコードするクラス
  */
 class CheckExtensionServices
 {
