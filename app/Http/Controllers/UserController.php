@@ -19,7 +19,7 @@ class UserController extends Controller
      * @param int $id ユーザーid
      */
     public function show($id)
-    {   
+    {
         // ユーザー情報取得
         $user = User::findorFail($id);
         return view('users.show', compact('user'));

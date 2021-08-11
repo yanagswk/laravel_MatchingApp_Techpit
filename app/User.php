@@ -6,6 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
+/**
+ * userテーブル用クラス
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -38,4 +42,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Reactionテーブルとのリレーションを設定
+     * to_user_idカラム いいねされた人
+     * 
+     * 主キー: User
+     * 外部キー: Reaction
+     */
+    public function toUserId()
+    {
+                    // hasMany(相手のモデル名, 相手モデルのID, 自モデルのID)
+        return $this->hasMany('App\Reaction', 'to_user_id', 'id');
+    }
+
+
+    /**
+     * Reactionテーブルとのリレーションを設定
+     * from_user_idカラム いいねした人(ログインしているユーザー)
+     * 
+     * 主キー: User
+     * 外部キー: Reaction
+     */
+    public function fromUserId()
+    {
+                    // hasMany(相手のモデル名, 相手モデルのID, 自モデルのID)
+        return $this->hasMany('App\Reaction', 'from_user_id', 'id');
+    }
 }

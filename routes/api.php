@@ -1,18 +1,19 @@
 <?php
 
+/**
+ * api用のファイル
+ * 
+ * route/api.phpファイルにルーティングを記載すると自動的に 
+ * /apiというURLが付与されます。
+ */
+
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+// Ajax使用 like, dislikeを取得
+Route::post('/like', 'ReactionController@create');

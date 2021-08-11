@@ -18,4 +18,5 @@ Route::get('/', function () {
 // 認証画面
 Auth::routes();
 
+// home画面 home画面に遷移する前に、MiddlewareのRedirectIfAuthenticatedが呼ばれている
 Route::get('/home', 'HomeController@index')->name('home');

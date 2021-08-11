@@ -22,4 +22,3 @@ class FileUploadServices
         return $list;
     }
 }
-
