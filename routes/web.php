@@ -20,3 +20,6 @@ Auth::routes();
 
 // home画面 home画面に遷移する前に、MiddlewareのRedirectIfAuthenticatedが呼ばれている
 Route::get('/home', 'HomeController@index')->name('home');
+
+// マッチング画面
+Route::get('/matching', 'MatchingController@index')->name('matching');

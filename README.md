@@ -22,4 +22,5 @@ php artisan config:clear
 - ログインユーザーの性別を判定して、home画面で表示させるのは異性にする
 - 写真読み込み　うまくいかない
 - ReactionControllerのto_user_idとfrom_user_idの組み合わせがない場合を、サービスへ登録
+- 7-1 サービス化
 
